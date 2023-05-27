@@ -1,0 +1,40 @@
+﻿@page
+@model Listados.Pages.grupos.IndexModel
+@{
+}
+
+<br>
+<h2>Lista de Alumnos</h2>
+<a class='btn btn-primary btn-sm' href='/grupos/Crear'>Nuevo Alumno</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombres</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Creado</th>
+            <th>Accion</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listgrupo)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.nombres</td>
+                <td>@item.emails</td>
+                <td>@item.telefonos</td>
+                <td>@item.direcciones</td>
+                <td>@item.creacion</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/grupos/Editar?id=@item.id">Editar</a>
+                    <a class="btn btn-danger btn-sm" href="/grupos/Eliminar?id=@item.id">Borrar</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
